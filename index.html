@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Samarinda Hills – Perumahan Komersil Samarinda Seberang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   CSS TOKENS
+═══════════════════════════════════════ */
+:root {
+  --ink:         #0d1b2a;
+  --ink-soft:    #1e3a5f;
+  --emerald:     #1a6b45;
+  --emerald-mid: #22854f;
+  --emerald-lite:#34a869;
+  --gold:        #c8962a;
+  --gold-lite:   #f0c050;
+  --cream:       #faf7f0;
+  --cream-dark:  #f0ebe0;
+  --white:       #ffffff;
+  --gray-400:    #94a3b8;
+  --gray-600:    #64748b;
+  --red-hot:     #e53e3e;
+  --green-wa:    #25d366;
+  --green-wa-d:  #1aad54;
+
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+  --shadow: 0 8px 40px rgba(13,27,42,.13);
+  --shadow-lg: 0 20px 60px rgba(13,27,42,.18);
+}
+
+/* ═══════════════════════════════════════
+   BASE
+═══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.65}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ═══════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════ */
+.display{font-family:'Unbounded',sans-serif;line-height:1.1;font-weight:900}
+h2{font-family:'Unbounded',sans-serif;font-weight:700;line-height:1.2;font-size:clamp(1.5rem,3.5vw,2.4rem)}
+h3{font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(1rem,2vw,1.25rem);line-height:1.3}
+p{color:var(--gray-600);font-size:.97rem}
+
+/* ═══════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════ */
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+section{padding:80px 0}
+
+/* ═══════════════════════════════════════
+   CHIP / LABEL
+═══════════════════════════════════════ */
+.chip{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.chip-green{background:rgba(26,107,69,.1);color:var(--emerald-mid);border:1px solid rgba(26,107,69,.18)}
+.chip-gold{background:rgba(200,150,42,.1);color:var(--gold);border:1px solid rgba(200,150,42,.22)}
+.chip-red{background:#fff0f0;color:var(--red-hot);border:1px solid rgba(229,62,62,.2)}
+.chip-white{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)}
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 28px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .22s;cursor:pointer}
+.btn-wa{background:var(--green-wa);color:#fff;box-shadow:0 6px 28px rgba(37,211,102,.35)}
+.btn-wa:hover{background:var(--green-wa-d);transform:translateY(-2px);box-shadow:0 10px 34px rgba(37,211,102,.45)}
+.btn-wa:active{transform:translateY(0)}
+.btn-wa-lg{font-size:1.05rem;padding:17px 36px}
+.btn-outline-white{border:2px solid rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(6px)}
+.btn-outline-white:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-lite));color:var(--ink);font-weight:700;box-shadow:0 6px 20px rgba(200,150,42,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,150,42,.45)}
+
+/* ═══════════════════════════════════════
+   TOPBAR
+═══════════════════════════════════════ */
+#topbar{position:fixed;top:0;left:0;right:0;z-index:999;transition:all .3s}
+#topbar.clear{background:transparent}
+#topbar.solid{background:rgba(13,27,42,.96);backdrop-filter:blur(16px);box-shadow:0 2px 24px rgba(0,0,0,.25)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1200px;margin:0 auto}
+.logo-wrap img{height:40px;width:auto;display:block}
+.logo-text{font-family:'Unbounded',sans-serif;font-weight:900;font-size:1rem;color:#fff;letter-spacing:.04em}
+.logo-sub{font-family:'DM Sans',sans-serif;font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
+.topbar-cta{font-size:.85rem;padding:10px 22px;display:flex;align-items:center;gap:8px}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+#hero{
+  position:relative;min-height:100vh;display:flex;align-items:flex-end;
+  background:#0d1b2a;overflow:hidden;padding:0;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://cdn.scalev.id/uploads/1778137146/YKoLMBbPDJt6-3kon08eag/1778137146756-Gerbang-Samarinda-Hills.webp');
+  background-size:cover;background-position:center;
+  transform:scale(1.06);transition:transform 8s ease;
+}
+.hero-bg.loaded{transform:scale(1)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.35) 0%,rgba(13,27,42,.1) 40%,rgba(13,27,42,.88) 100%)}
+.hero-overlay2{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,42,.5) 0%,transparent 60%)}
+.hero-content{position:relative;z-index:2;width:100%;padding:0 22px 70px;max-width:1200px;margin:0 auto}
+
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.hero-eyebrow .dot{width:8px;height:8px;background:var(--gold-lite);border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-eyebrow span{font-size:.78rem;color:var(--gold-lite);font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+
+.hero-title{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(2.1rem,6vw,4.2rem);color:#fff;line-height:1.08;margin-bottom:10px}
+.hero-title .green{color:var(--emerald-lite)}
+.hero-title .gold{color:var(--gold-lite)}
+
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.75);max-width:520px;margin-bottom:32px;font-weight:300}
+
+.hero-stats{display:flex;gap:0;margin-bottom:36px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);overflow:hidden;width:fit-content;background:rgba(255,255,255,.06);backdrop-filter:blur(12px)}
+.hero-stat{padding:16px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.hero-stat:last-child{border-right:none}
+.hero-stat .n{font-family:'Unbounded',sans-serif;font-size:1.5rem;font-weight:900;color:var(--gold-lite)}
+.hero-stat .l{font-size:.68rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:2px}
+
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{color:rgba(255,255,255,.45);font-size:.75rem;margin-top:12px;display:flex;align-items:center;gap:6px}
+.hero-note::before{content:'';width:20px;height:1px;background:rgba(255,255,255,.3)}
+
+/* scroll indicator */
+.scroll-hint{position:absolute;bottom:26px;right:26px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-hint span{font-size:.65rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em}
+.scroll-arrow{width:28px;height:28px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ═══════════════════════════════════════
+   INTRO STRIP
+═══════════════════════════════════════ */
+#strip{background:var(--emerald);padding:18px 0}
+.strip-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.strip-item{display:flex;align-items:center;gap:10px;color:#fff;font-size:.82rem;font-weight:500}
+.strip-item svg{opacity:.8}
+.strip-sep{width:1px;height:20px;background:rgba(255,255,255,.25)}
+
+/* ═══════════════════════════════════════
+   SECTION HEADER
+═══════════════════════════════════════ */
+.sec-head{margin-bottom:50px}
+.sec-head.center{text-align:center;display:flex;flex-direction:column;align-items:center}
+.sec-head h2{margin:12px 0 14px}
+.sec-head p{max-width:540px;font-size:.97rem}
+
+/* ═══════════════════════════════════════
+   ABOUT / VISION
+═══════════════════════════════════════ */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-main{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;object-fit:cover;width:100%}
+.about-img-badge{
+  position:absolute;bottom:-20px;right:-20px;
+  background:var(--ink);color:#fff;border-radius:var(--r-md);padding:16px 22px;
+  box-shadow:var(--shadow);
+}
+.about-img-badge .big{font-family:'Unbounded',sans-serif;font-size:1.5rem;font-weight:900;color:var(--gold-lite)}
+.about-img-badge .sm{font-size:.72rem;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase}
+
+.about-text .chip{margin-bottom:16px}
+.about-text h2{margin-bottom:16px}
+.about-text p{margin-bottom:20px}
+.about-feats{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.about-feat{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:var(--r-sm);border-left:3px solid var(--emerald-lite)}
+.about-feat-icon{font-size:1.2rem;flex-shrink:0;margin-top:1px}
+.about-feat h4{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.about-feat p{font-size:.8rem;margin:0}
+
+/* ═══════════════════════════════════════
+   KEUNGGULAN
+═══════════════════════════════════════ */
+#keunggulan{background:var(--cream)}
+.k-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px}
+.k-card{
+  background:var(--white);border-radius:var(--r-md);padding:28px 22px;text-align:center;
+  box-shadow:0 2px 16px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04);
+  transition:all .25s;cursor:default;
+}
+.k-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--emerald-lite)}
+.k-icon{width:58px;height:58px;border-radius:16px;background:rgba(26,107,69,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.7rem}
+.k-card h3{font-size:.9rem;color:var(--ink);margin-bottom:8px}
+.k-card p{font-size:.8rem}
+
+/* ═══════════════════════════════════════
+   FASILITAS
+═══════════════════════════════════════ */
+#fasilitas{background:var(--ink);position:relative;overflow:hidden}
+#fasilitas::before{
+  content:'';position:absolute;inset:0;
+  background:url('https://cdn.scalev.id/uploads/1778127604/o6an_nkQGBiqLo687DxqAQ/1778127605249-Bahan-Scelev-(3).webp') center/cover;
+  opacity:.15;
+}
+.fas-inner{position:relative;z-index:1}
+.fas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px}
+.fas-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:28px 20px;text-align:center;backdrop-filter:blur(8px);transition:all .25s}
+.fas-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+.fas-card .icon{font-size:2.4rem;margin-bottom:14px}
+.fas-card h3{font-size:.92rem;color:#fff;margin-bottom:8px}
+.fas-card p{font-size:.78rem;color:rgba(255,255,255,.55)}
+
+/* ═══════════════════════════════════════
+   PRODUK / TIPE RUMAH
+═══════════════════════════════════════ */
+#produk{background:var(--cream)}
+.produk-tabs{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap}
+.ptab{padding:9px 22px;border-radius:50px;font-size:.84rem;font-weight:600;border:2px solid transparent;transition:all .2s;cursor:pointer;color:var(--gray-600);border-color:var(--cream-dark);background:var(--white)}
+.ptab.active{background:var(--emerald);color:#fff;border-color:var(--emerald)}
+.ptab:hover:not(.active){border-color:var(--emerald);color:var(--emerald)}
+
+.produk-panel{display:none}
+.produk-panel.active{display:block}
+
+.unit-card{
+  background:var(--white);border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr 1fr;
+  min-height:420px;
+}
+
+/* IMAGE SLIDER */
+.unit-slider{position:relative;overflow:hidden;background:var(--ink-soft)}
+.unit-slides{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);height:100%}
+.unit-slide{flex:0 0 100%;height:100%;position:relative}
+.unit-slide img{width:100%;height:100%;object-fit:cover}
+.slide-nav{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.slide-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);transition:all .2s;cursor:pointer;border:none}
+.slide-dot.active{background:#fff;width:20px;border-radius:10px}
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;z-index:2;box-shadow:0 2px 10px rgba(0,0,0,.2);transition:all .2s;font-size:1rem}
+.slide-btn:hover{background:#fff;transform:translateY(-50%) scale(1.05)}
+.slide-btn.prev{left:12px}
+.slide-btn.next{right:12px}
+
+/* STATUS BADGE */
+.unit-status{position:absolute;top:14px;left:14px;z-index:2;display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.unit-status.ready{background:#dcfce7;color:#14532d}
+.unit-status.indent{background:#fef3c7;color:#92400e}
+.status-dot{width:7px;height:7px;border-radius:50%;animation:blink 1.2s infinite}
+.ready .status-dot{background:#16a34a}
+.indent .status-dot{background:#f59e0b}
+
+.unit-info{padding:32px 32px 28px;display:flex;flex-direction:column}
+.unit-type-label{font-family:'Unbounded',sans-serif;font-size:.62rem;font-weight:700;color:var(--emerald-mid);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.unit-name{font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.45rem;color:var(--ink);margin-bottom:4px}
+.unit-spec-row{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0}
+.unit-spec{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--gray-600)}
+.unit-spec span{font-size:.95rem}
+
+.unit-price-box{background:var(--cream);border-radius:var(--r-sm);padding:16px 18px;margin-bottom:20px}
+.unit-price-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.upg-item{padding:8px 12px;background:var(--white);border-radius:8px}
+.upg-label{font-size:.68rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.upg-val{font-family:'Unbounded',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink)}
+.upg-item.highlight{background:var(--ink);border-radius:8px}
+.upg-item.highlight .upg-label{color:rgba(255,255,255,.45)}
+.upg-item.highlight .upg-val{color:var(--gold-lite)}
+
+.unit-free{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.free-tag{background:rgba(26,107,69,.08);color:var(--emerald-mid);border:1px solid rgba(26,107,69,.15);padding:4px 11px;border-radius:50px;font-size:.72rem;font-weight:700}
+.bonus-tag{background:rgba(200,150,42,.1);color:var(--gold);border:1px solid rgba(200,150,42,.2);padding:4px 11px;border-radius:50px;font-size:.72rem;font-weight:700}
+
+.unit-cta{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.unit-cta .btn{justify-content:center;width:100%}
+
+/* ═══════════════════════════════════════
+   PROMO BANNER
+═══════════════════════════════════════ */
+#promo{background:var(--white);padding:80px 0}
+.promo-wrap{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink-soft) 100%);
+  border-radius:var(--r-xl);overflow:hidden;position:relative;
+}
+.promo-wrap::before{
+  content:'';position:absolute;inset:0;
+  background:url('https://cdn.scalev.id/uploads/1778137056/uWAyIAhL0deCTHOtsU698g/1778137056781-5.webp') right center/cover;
+  opacity:.18;
+}
+.promo-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:60px}
+.promo-left .chip{margin-bottom:18px}
+.promo-left h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:16px}
+.promo-left p{color:rgba(255,255,255,.65);margin-bottom:28px}
+.promo-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.promo-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:20px 18px;backdrop-filter:blur(8px)}
+.promo-card .icon{font-size:1.8rem;margin-bottom:10px}
+.promo-card h3{color:var(--gold-lite);font-size:.88rem;margin-bottom:6px}
+.promo-card p{font-size:.78rem;color:rgba(255,255,255,.6)}
+
+/* ═══════════════════════════════════════
+   URGENCY
+═══════════════════════════════════════ */
+#urgency{
+  background:linear-gradient(135deg,#7f1d1d 0%,#991b1b 50%,#b91c1c 100%);
+  padding:50px 0;
+}
+.urg-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.urg-left{display:flex;align-items:center;gap:18px;flex:1;min-width:260px}
+.urg-icon{width:56px;height:56px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;animation:shake 2s infinite}
+@keyframes shake{0%,90%,100%{transform:rotate(0)}92%{transform:rotate(-10deg)}94%{transform:rotate(10deg)}96%{transform:rotate(-10deg)}98%{transform:rotate(10deg)}}
+.urg-text h3{font-family:'Unbounded',sans-serif;font-weight:700;font-size:1.15rem;color:#fff;margin-bottom:5px}
+.urg-text p{color:rgba(255,255,255,.7);font-size:.85rem}
+.urg-right{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.urg-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-sm);padding:12px 18px;text-align:center}
+.urg-badge .nb{font-family:'Unbounded',sans-serif;font-size:1.5rem;font-weight:900;color:var(--gold-lite)}
+.urg-badge .lb{font-size:.68rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em}
+
+/* ═══════════════════════════════════════
+   LOKASI
+═══════════════════════════════════════ */
+#lokasi{background:var(--cream)}
+.lokasi-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:start;margin-top:40px}
+
+.lokasi-img-stack{position:relative}
+.lok-img-main{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);width:100%;aspect-ratio:4/3;object-fit:cover}
+.lok-img-pin{
+  position:absolute;bottom:-16px;left:20px;
+  background:var(--ink);color:#fff;border-radius:var(--r-md);
+  padding:12px 18px;display:flex;align-items:center;gap:10px;
+  box-shadow:var(--shadow);font-size:.82rem;font-weight:500;
+}
+.lok-img-pin svg{color:var(--emerald-lite);flex-shrink:0}
+
+.lokasi-items{display:flex;flex-direction:column;gap:12px}
+.lok-item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--white);border-radius:var(--r-sm);padding:14px 18px;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+  transition:transform .2s;cursor:default;
+}
+.lok-item:hover{transform:translateX(4px)}
+.lok-icon{width:44px;height:44px;border-radius:12px;background:rgba(26,107,69,.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.lok-item h4{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:2px}
+.lok-item p{font-size:.75rem;margin:0}
+.lok-dist{margin-left:auto;font-size:.75rem;font-weight:700;color:var(--emerald-mid);background:rgba(26,107,69,.08);padding:3px 10px;border-radius:50px;white-space:nowrap}
+
+.direction-box{background:var(--ink);border-radius:var(--r-md);padding:20px;margin-top:16px}
+.direction-box h4{font-family:'Unbounded',sans-serif;font-size:.8rem;color:var(--gold-lite);margin-bottom:8px}
+.direction-box p{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* ═══════════════════════════════════════
+   FAQ
+═══════════════════════════════════════ */
+#faq{background:var(--white)}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:40px auto 0}
+.faq-item{background:var(--cream);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--cream-dark)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-weight:600;font-size:.95rem;color:var(--ink);gap:12px}
+.faq-q:hover{background:var(--cream-dark)}
+.faq-icon{width:26px;height:26px;border-radius:50%;background:var(--emerald);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-icon{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+.faq-a p{font-size:.88rem}
+
+/* ═══════════════════════════════════════
+   CONTACT / FOOTER CTA
+═══════════════════════════════════════ */
+#contact{
+  background:var(--ink);
+  position:relative;overflow:hidden;
+}
+#contact::before{
+  content:'';position:absolute;inset:0;
+  background:url('https://cdn.scalev.id/uploads/1778127478/s6UVditS3rUIbjvSxBYV-A/1778127479046-Bahan-Scelev-(2).webp') center/cover;
+  opacity:.07;
+}
+.contact-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;padding:90px 0 80px}
+
+.contact-left h2{color:#fff;margin-bottom:14px}
+.contact-left > p{color:rgba(255,255,255,.6);margin-bottom:36px}
+.contact-info{display:flex;flex-direction:column;gap:14px}
+.ci-row{display:flex;align-items:flex-start;gap:14px}
+.ci-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ci-row h4{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.ci-row p{font-size:.92rem;color:#fff;margin:0;font-weight:500}
+
+.contact-right{display:flex;flex-direction:column;gap:20px}
+.cta-main-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r-xl);padding:40px 36px;text-align:center;
+  backdrop-filter:blur(12px);
+}
+.cta-main-card .headline{font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.4rem;color:#fff;margin-bottom:10px}
+.cta-main-card p{color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:28px}
+.cta-main-card .btn-wa{font-size:1.05rem;padding:16px 32px;width:100%;justify-content:center}
+.trust-row{display:flex;justify-content:center;gap:20px;margin-top:18px;flex-wrap:wrap}
+.trust-item{color:rgba(255,255,255,.4);font-size:.72rem;display:flex;align-items:center;gap:5px}
+.trust-item svg{color:var(--gold-lite)}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:#060e18;padding:22px;text-align:center}
+footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
+footer a{color:rgba(255,255,255,.5);text-decoration:underline}
+.footer-logo{height:32px;width:auto;margin:0 auto 14px;opacity:.7}
+
+/* ═══════════════════════════════════════
+   STICKY WA
+═══════════════════════════════════════ */
+#sticky{position:fixed;bottom:22px;right:18px;z-index:998}
+#sticky a{
+  display:flex;align-items:center;gap:0;
+  background:var(--green-wa);color:#fff;font-weight:700;font-size:.88rem;
+  padding:14px 16px;border-radius:50px;
+  box-shadow:0 6px 28px rgba(37,211,102,.42);
+  transition:all .3s;overflow:hidden;white-space:nowrap;
+}
+#sticky:hover a{gap:10px;padding:14px 22px}
+#sticky .wa-label{max-width:0;overflow:hidden;transition:max-width .3s}
+#sticky:hover .wa-label{max-width:180px}
+.wa-ping{position:absolute;top:-5px;right:-5px;width:18px;height:18px;background:#ef4444;border-radius:50%;border:2px solid #fff;animation:blink 1.2s infinite}
+#sticky{animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+.r{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.r.vis{opacity:1;transform:translateY(0)}
+.r-l{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
+.r-l.vis{opacity:1;transform:translateX(0)}
+.r-r{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
+.r-r.vis{opacity:1;transform:translateX(0)}
+[data-delay="1"]{transition-delay:.1s}
+[data-delay="2"]{transition-delay:.2s}
+[data-delay="3"]{transition-delay:.3s}
+[data-delay="4"]{transition-delay:.4s}
+[data-delay="5"]{transition-delay:.5s}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  .about-grid,.lokasi-grid,.contact-inner{grid-template-columns:1fr}
+  .about-img-badge{right:0;bottom:-12px}
+  .unit-card{grid-template-columns:1fr}
+  .unit-slider{height:280px;min-height:280px}
+  .unit-slide img{height:280px}
+  .promo-inner{grid-template-columns:1fr;padding:36px 28px}
+  .fas-grid{grid-template-columns:repeat(2,1fr)}
+  .lokasi-img-stack{display:none}
+}
+@media(max-width:640px){
+  section{padding:60px 0}
+  .hero-stats{gap:0;width:100%}
+  .hero-stat{flex:1;padding:12px 10px}
+  .hero-stat .n{font-size:1.2rem}
+  .strip-inner{gap:16px}
+  .strip-sep{display:none}
+  .k-grid{grid-template-columns:repeat(2,1fr)}
+  .promo-cards{grid-template-columns:1fr}
+  .fas-grid{grid-template-columns:1fr 1fr}
+  .unit-info{padding:22px 20px}
+  .unit-price-grid{grid-template-columns:1fr 1fr}
+  .contact-inner{padding:60px 0}
+  .cta-main-card{padding:28px 22px}
+  .hero-ctas{flex-direction:column;align-items:flex-start}
+  .urg-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:400px){
+  .k-grid{grid-template-columns:1fr}
+  .fas-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOPBAR ═══ -->
+<header id="topbar" class="clear">
+  <div class="topbar-inner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://cdn.scalev.id/uploads/1778207605/iKxuNxP3K61HZDE9o2hoeg/1778207606067-logo-Samarinda-Hill.webp"
+           alt="Samarinda Hills" style="height:38px;width:auto;object-fit:contain"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div style="display:none">
+        <div class="logo-text">Samarinda Hills</div>
+        <div class="logo-sub">Perumahan Komersil</div>
+      </div>
+    </div>
+    <a href="https://wa.me/6285753858493?text=Halo,%20saya%20tertarik%20dengan%20Samarinda%20Hills.%20Bisa%20info%20lebih%20lanjut?" target="_blank" class="btn btn-wa topbar-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat WA
+    </a>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="dot"></div>
+      <span>Perumahan Komersil Samarinda Seberang</span>
+    </div>
+    <h1 class="hero-title display r">
+      Samarinda<br>
+      <span class="green">Hills</span><br>
+      <span class="gold">DP 10%</span> Cicilan<br>
+      2 Jutaan/Bln
+    </h1>
+    <p class="hero-sub r" data-delay="1">Hunian modern di Loa Janan Ilir dengan lingkungan asri, aman, dan nyaman. Lokasi strategis, legalitas lengkap, proses KPR dibantu penuh.</p>
+    <div class="hero-stats r" data-delay="2">
+      <div class="hero-stat"><div class="n">10%</div><div class="l">DP Mulai</div></div>
+      <div class="hero-stat"><div class="n">3 Tipe</div><div class="l">Pilihan Unit</div></div>
+      <div class="hero-stat"><div class="n">Free</div><div class="l">BPHTB+SHM+PPN</div></div>
+      <div class="hero-stat"><div class="n">5★</div><div class="l">Kepuasan</div></div>
+    </div>
+    <div class="hero-ctas r" data-delay="3">
+      <a href="https://wa.me/6285753858493?text=Halo,%20saya%20tertarik%20dengan%20Samarinda%20Hills.%20Bisa%20info%20ketersediaan%20unit%20dan%20simulasi%20KPR?" target="_blank" class="btn btn-wa btn-wa-lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat WhatsApp Sekarang
+      </a>
+      <a href="#produk" class="btn btn-outline-white">Lihat Tipe Rumah ↓</a>
+    </div>
+    <div class="hero-note r" data-delay="4">Respon cepat · Gratis konsultasi · Tanpa biaya tersembunyi</div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STRIP ═══ -->
+<div id="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Legalitas Lengkap &amp; Aman</div>
+    <div class="strip-sep"></div>
+    <div class="strip-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> DP 10% – Cicilan 2 Jutaan</div>
+    <div class="strip-sep"></div>
+    <div class="strip-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Free BPHTB · SHM · PPN · Akad</div>
+    <div class="strip-sep"></div>
+    <div class="strip-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Bonus AC · Kulkas · Kanopi</div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-wrap r-l">
+        <img class="about-img-main"
+          src="https://cdn.scalev.id/uploads/1778127478/s6UVditS3rUIbjvSxBYV-A/1778127479046-Bahan-Scelev-(2).webp"
+          alt="Kawasan Samarinda Hills">
+        <div class="about-img-badge">
+          <div class="big">Member</div>
+          <div class="sm">REI Association</div>
+        </div>
+      </div>
+      <div class="about-text r-r">
+        <div class="chip chip-green">Tentang Samarinda Hills</div>
+        <h2>Hunian Modern di Jantung<br>Samarinda Seberang</h2>
+        <p>Samarinda Hills adalah kawasan hunian modern di Loa Janan Ilir, Samarinda Seberang, yang mengusung konsep lingkungan asri, aman, dan nyaman — ideal untuk keluarga maupun investasi properti jangka panjang.</p>
+        <div class="about-feats">
+          <div class="about-feat">
+            <div class="about-feat-icon">📋</div>
+            <div><h4>Legalitas Jelas &amp; Lengkap</h4><p>SHM, IMB, dan semua dokumen legal ditanggung developer. Anda cukup siapkan DP.</p></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">🏗️</div>
+            <div><h4>Struktur Bangunan Berkualitas</h4><p>Material pilihan, pengerjaan rapi dan presisi, finishing halus di setiap sudut.</p></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">🛣️</div>
+            <div><h4>Jalan Full Cor Beton</h4><p>Akses utama dan jalan perumahan sudah full cor beton. Bebas masalah genangan.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEUNGGULAN ═══ -->
+<section id="keunggulan">
+  <div class="wrap">
+    <div class="sec-head center r">
+      <div class="chip chip-green">Keunggulan</div>
+      <h2>Mengapa Samarinda Hills<br>Jadi Pilihan Terbaik?</h2>
+      <p>Lima keunggulan yang membuat ribuan keluarga percayakan hunian impian mereka kepada kami.</p>
+    </div>
+    <div class="k-grid">
+      <div class="k-card r" data-delay="1"><div class="k-icon">📋</div><h3>Legalitas Aman</h3><p>SHM resmi, proses legal beres, tenang tinggal tanpa kekhawatiran.</p></div>
+      <div class="k-card r" data-delay="2"><div class="k-icon">🏗️</div><h3>Konstruksi Premium</h3><p>Material berkualitas tinggi, pengerjaan rapi, finishing sempurna.</p></div>
+      <div class="k-card r" data-delay="3"><div class="k-icon">🌿</div><h3>Lingkungan Asri</h3><p>Kawasan hijau, udara bersih, tata lingkungan tertib dan nyaman.</p></div>
+      <div class="k-card r" data-delay="4"><div class="k-icon">📍</div><h3>Lokasi Strategis</h3><p>Di Loa Janan Ilir, akses mudah ke pusat kota via JL. KH Harun Nafsi.</p></div>
+      <div class="k-card r" data-delay="5"><div class="k-icon">🏦</div><h3>KPR Dibantu Penuh</h3><p>Tim kami urus semua proses KPR dari awal hingga akad selesai.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FASILITAS ═══ -->
+<section id="fasilitas">
+  <div class="wrap fas-inner">
+    <div class="sec-head center r">
+      <div class="chip chip-white">Fasilitas Lengkap</div>
+      <h2 style="color:#fff">Fasilitas Lengkap untuk<br>Kualitas Hidup Lebih Baik</h2>
+    </div>
+    <div class="fas-grid">
+      <div class="fas-card r" data-delay="1"><div class="icon">🏃</div><h3>Jogging Track</h3><p>Jalur jogging nyaman untuk menjaga kebugaran keluarga setiap hari.</p></div>
+      <div class="fas-card r" data-delay="2"><div class="icon">🛝</div><h3>Playground</h3><p>Area bermain anak yang aman dan menyenangkan di dalam kawasan.</p></div>
+      <div class="fas-card r" data-delay="3"><div class="icon">🕌</div><h3>Musholla</h3><p>Musholla nyaman untuk beribadah tanpa perlu keluar kawasan.</p></div>
+      <div class="fas-card r" data-delay="4"><div class="icon">💧</div><h3>Kolam Retensi</h3><p>Sistem drainase cerdas, kawasan bebas banjir meski musim hujan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUK / TIPE RUMAH ═══ -->
+<section id="produk">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="chip chip-green">Pilihan Unit</div>
+      <h2>Temukan Tipe Rumah<br>yang Tepat untuk Anda</h2>
+      <p>Pilih dari tiga tipe unggulan kami — semua dengan DP ringan, bonus melimpah, dan proses KPR yang kami bantu.</p>
+    </div>
+
+    <div class="produk-tabs r">
+      <button class="ptab active" onclick="switchTab(0,this)">Tipe 36 Harmonia (Old)</button>
+      <button class="ptab" onclick="switchTab(1,this)">Tipe 36 Harmonia (New)</button>
+      <button class="ptab" onclick="switchTab(2,this)">Tipe 40 Natura</button>
+    </div>
+
+    <!-- PANEL 0: Tipe 36 Old -->
+    <div class="produk-panel active" id="panel-0">
+      <div class="unit-card">
+        <div class="unit-slider">
+          <div class="unit-status ready"><div class="status-dot"></div>Ready Stock ✅</div>
+          <div class="unit-slides" id="slides-0">
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778138426/uz7zrb1FjHucux9qS23Qbw/1778138426694-2.webp" alt="Tipe 36 Old 1" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778138432/UT4Hp-x-ZqhDLY734qmobg/1778138432597-3.webp" alt="Tipe 36 Old 2" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778138436/LIqS5bmgzZDZ-viEOn80Kg/1778138436624-4.webp" alt="Tipe 36 Old 3" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778138439/n1K8YNlctgaASVL8DjOBrQ/1778138439837-5.webp" alt="Tipe 36 Old 4" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778138443/9RdEtBBdjV2wVSlLpkiozA/1778138443232-6.webp" alt="Tipe 36 Old 5" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778138448/HAWFDrpquw9q3jyfBbih3g/1778138448243-7.webp" alt="Tipe 36 Old 6" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778138453/h6MbHQKq4adlfjZXYX57QA/1778138453491-8.webp" alt="Tipe 36 Old 7" loading="lazy"></div>
+          </div>
+          <button class="slide-btn prev" onclick="slide('slides-0','dots-0',-1)">‹</button>
+          <button class="slide-btn next" onclick="slide('slides-0','dots-0',1)">›</button>
+          <div class="slide-nav" id="dots-0"></div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-type-label">Tipe Starter</div>
+          <div class="unit-name">Tipe 36 Harmonia</div>
+          <div style="font-size:.78rem;color:var(--gray-400);margin-bottom:4px">Desain Klasik (Old)</div>
+          <div class="unit-spec-row">
+            <div class="unit-spec"><span>🛏️</span> 2 Kamar Tidur</div>
+            <div class="unit-spec"><span>🚿</span> 1 Toilet</div>
+            <div class="unit-spec"><span>🚗</span> Carport</div>
+            <div class="unit-spec"><span>🍳</span> Dapur</div>
+            <div class="unit-spec"><span>📐</span> LT 7×13 m</div>
+            <div class="unit-spec"><span>🏠</span> LB 6×6 m</div>
+          </div>
+          <div class="unit-price-box">
+            <div class="unit-price-grid">
+              <div class="upg-item"><div class="upg-label">Cash</div><div class="upg-val">Rp 463 Jt</div></div>
+              <div class="upg-item"><div class="upg-label">Cash Bertahap</div><div class="upg-val">Rp 478 Jt</div></div>
+              <div class="upg-item highlight"><div class="upg-label">KPR (5–20 Thn)</div><div class="upg-val">Rp 508 Jt</div></div>
+              <div class="upg-item highlight"><div class="upg-label">Angsuran Mulai</div><div class="upg-val">2 Jt/Bln</div></div>
+            </div>
+            <div style="margin-top:10px;padding:8px 12px;background:var(--cream-dark);border-radius:8px;font-size:.8rem;color:var(--emerald);font-weight:600">DP 10% = Rp 50,8 Juta • Cash Bertahap DP 50%, Cicil 6×</div>
+          </div>
+          <div class="unit-free">
+            <span class="free-tag">✓ Free BPHTB</span>
+            <span class="free-tag">✓ Free PPN</span>
+            <span class="free-tag">✓ Free SHM</span>
+            <span class="free-tag">✓ Free Akad</span>
+            <span class="bonus-tag">🎁 Bonus AC</span>
+            <span class="bonus-tag">🎁 Kanopi</span>
+            <span class="bonus-tag">🎁 Kulkas</span>
+          </div>
+          <div class="unit-cta">
+            <a href="https://wa.me/6285753858493?text=Halo,%20saya%20tertarik%20dengan%20Tipe%2036%20Harmonia%20(Old).%20Bisa%20info%20ketersediaan%20dan%20simulasi%20KPR?" target="_blank" class="btn btn-wa">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Tanya Unit Ini via WA
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 1: Tipe 36 New -->
+    <div class="produk-panel" id="panel-1">
+      <div class="unit-card">
+        <div class="unit-slider">
+          <div class="unit-status ready"><div class="status-dot"></div>Ready Stock ✅</div>
+          <div class="unit-slides" id="slides-1">
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139356/JVWMSLqf9Hi1zfDzywWLaw/1778139356330-2.webp" alt="Tipe 36 New 1" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139362/uAKydmTJTG9dfcW999q7_g/1778139362020-3.webp" alt="Tipe 36 New 2" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139365/xyeetS2yGYsdi06W59sCKA/1778139365967-4.webp" alt="Tipe 36 New 3" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139369/14CECKAe0kdAV11ti1V0cA/1778139369834-5.webp" alt="Tipe 36 New 4" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139373/04q5e7dH-H5yRc0xe-fIQw/1778139373761-6.webp" alt="Tipe 36 New 5" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139377/KL4xezd71KY_-WFLlKVIjA/1778139378013-7.webp" alt="Tipe 36 New 6" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139383/oOmzBf3bWRIpvM1LxIY62A/1778139383254-8.webp" alt="Tipe 36 New 7" loading="lazy"></div>
+          </div>
+          <button class="slide-btn prev" onclick="slide('slides-1','dots-1',-1)">‹</button>
+          <button class="slide-btn next" onclick="slide('slides-1','dots-1',1)">›</button>
+          <div class="slide-nav" id="dots-1"></div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-type-label">Tipe Unggulan</div>
+          <div class="unit-name">Tipe 36 Harmonia</div>
+          <div style="font-size:.78rem;color:var(--gold);margin-bottom:4px;font-weight:600">✨ Desain Terbaru (New)</div>
+          <div class="unit-spec-row">
+            <div class="unit-spec"><span>🛏️</span> 2 Kamar Tidur</div>
+            <div class="unit-spec"><span>🚿</span> 1 Toilet</div>
+            <div class="unit-spec"><span>🚗</span> Carport</div>
+            <div class="unit-spec"><span>🍳</span> Dapur</div>
+            <div class="unit-spec"><span>📐</span> LT 7×13 m</div>
+            <div class="unit-spec"><span>🏠</span> LB 6×6 m</div>
+          </div>
+          <div class="unit-price-box">
+            <div class="unit-price-grid">
+              <div class="upg-item"><div class="upg-label">Cash</div><div class="upg-val">Rp 470 Jt</div></div>
+              <div class="upg-item"><div class="upg-label">Cash Bertahap</div><div class="upg-val">Rp 485 Jt</div></div>
+              <div class="upg-item highlight"><div class="upg-label">KPR (5–20 Thn)</div><div class="upg-val">Rp 526 Jt</div></div>
+              <div class="upg-item highlight"><div class="upg-label">Angsuran Mulai</div><div class="upg-val">3 Jt/Bln</div></div>
+            </div>
+            <div style="margin-top:10px;padding:8px 12px;background:var(--cream-dark);border-radius:8px;font-size:.8rem;color:var(--emerald);font-weight:600">DP 10% = Rp 52,6 Juta • Cash Bertahap DP 50%, Cicil 6×</div>
+          </div>
+          <div class="unit-free">
+            <span class="free-tag">✓ Free BPHTB</span>
+            <span class="free-tag">✓ Free PPN</span>
+            <span class="free-tag">✓ Free SHM</span>
+            <span class="free-tag">✓ Free Akad</span>
+            <span class="bonus-tag">🎁 Bonus AC</span>
+            <span class="bonus-tag">🎁 Kanopi</span>
+            <span class="bonus-tag">🎁 Kulkas</span>
+          </div>
+          <div class="unit-cta">
+            <a href="https://wa.me/6285753858493?text=Halo,%20saya%20tertarik%20dengan%20Tipe%2036%20Harmonia%20(New).%20Bisa%20info%20ketersediaan%20dan%20simulasi%20KPR?" target="_blank" class="btn btn-wa">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Tanya Unit Ini via WA
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 2: Tipe 40 Natura -->
+    <div class="produk-panel" id="panel-2">
+      <div class="unit-card">
+        <div class="unit-slider">
+          <div class="unit-status indent"><div class="status-dot"></div>Unit Indent ☑️</div>
+          <div class="unit-slides" id="slides-2">
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139542/T8p3lr7-lz5_6RBx_E2s6Q/1778139542502-2.webp" alt="Tipe 40 Natura 1" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139546/mLEcKOzKTuIXJggZaY5hGg/1778139546958-3.webp" alt="Tipe 40 Natura 2" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139549/oUbP5HRs7V8ezcSMWZNXiA/1778139550079-4.webp" alt="Tipe 40 Natura 3" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139553/yrkZkLB27arTRbHwhFAZfQ/1778139553641-5.webp" alt="Tipe 40 Natura 4" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139558/uOqEeB5KL0hPLZmcEOHqCw/1778139558275-6.webp" alt="Tipe 40 Natura 5" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139561/wNfpLCFj0dak-mNgTyNrQw/1778139561829-7.webp" alt="Tipe 40 Natura 6" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139565/0gYFPKbN9b6_0xuMzldZdA/1778139565972-8.webp" alt="Tipe 40 Natura 7" loading="lazy"></div>
+            <div class="unit-slide"><img src="https://cdn.scalev.id/uploads/1778139572/8HSQ4HPdAETnVaKj0i0t8g/1778139572177-9.webp" alt="Tipe 40 Natura 8" loading="lazy"></div>
+          </div>
+          <button class="slide-btn prev" onclick="slide('slides-2','dots-2',-1)">‹</button>
+          <button class="slide-btn next" onclick="slide('slides-2','dots-2',1)">›</button>
+          <div class="slide-nav" id="dots-2"></div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-type-label">Tipe Premium</div>
+          <div class="unit-name">Tipe 40 Natura</div>
+          <div style="font-size:.78rem;color:var(--gray-400);margin-bottom:4px">Lebih Luas, Lebih Nyaman</div>
+          <div class="unit-spec-row">
+            <div class="unit-spec"><span>🛏️</span> 2 Kamar Tidur</div>
+            <div class="unit-spec"><span>🚿</span> 1 Toilet</div>
+            <div class="unit-spec"><span>🚗</span> Carport</div>
+            <div class="unit-spec"><span>🍳</span> Dapur</div>
+            <div class="unit-spec"><span>📐</span> LT 7×13 m</div>
+            <div class="unit-spec"><span>🏠</span> LB 6×7 m</div>
+          </div>
+          <div class="unit-price-box">
+            <div class="unit-price-grid">
+              <div class="upg-item"><div class="upg-label">Cash</div><div class="upg-val">Rp 492 Jt</div></div>
+              <div class="upg-item"><div class="upg-label">Cash Bertahap</div><div class="upg-val">Rp 507 Jt</div></div>
+              <div class="upg-item highlight"><div class="upg-label">KPR (5–20 Thn)</div><div class="upg-val">Rp 542 Jt</div></div>
+              <div class="upg-item highlight"><div class="upg-label">Angsuran Mulai</div><div class="upg-val">4 Jt/Bln</div></div>
+            </div>
+            <div style="margin-top:10px;padding:8px 12px;background:var(--cream-dark);border-radius:8px;font-size:.8rem;color:var(--emerald);font-weight:600">DP 10% = Rp 54,2 Juta • Cash Bertahap DP 50%, Cicil 6×</div>
+          </div>
+          <div class="unit-free">
+            <span class="free-tag">✓ Free BPHTB</span>
+            <span class="free-tag">✓ Free PPN</span>
+            <span class="free-tag">✓ Free SHM</span>
+            <span class="free-tag">✓ Free Akad</span>
+            <span class="bonus-tag">🎁 Bonus AC</span>
+            <span class="bonus-tag">🎁 Kanopi</span>
+            <span class="bonus-tag">🎁 Kulkas</span>
+          </div>
+          <div class="unit-cta">
+            <a href="https://wa.me/6285753858493?text=Halo,%20saya%20tertarik%20dengan%20Tipe%2040%20Natura.%20Bisa%20info%20ketersediaan%20dan%20simulasi%20KPR?" target="_blank" class="btn btn-wa">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Tanya Unit Ini via WA
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ PROMO ═══ -->
+<section id="promo">
+  <div class="wrap">
+    <div class="promo-wrap r">
+      <div class="promo-inner">
+        <div class="promo-left">
+          <div class="chip chip-gold">🎁 Promo Eksklusif</div>
+          <h2>Penawaran Terbaik yang Tidak Akan Anda Temukan di Tempat Lain</h2>
+          <p>Hemat puluhan juta rupiah dengan semua free dan bonus yang sudah kami siapkan. Berlaku selama unit masih tersedia.</p>
+          <a href="https://wa.me/6285753858493?text=Halo,%20saya%20mau%20klaim%20promo%20Samarinda%20Hills.%20Masih%20berlaku%20untuk%20unit%20apa%20saja?" target="_blank" class="btn btn-gold">🎁 Klaim Promo via WA</a>
+        </div>
+        <div class="promo-cards">
+          <div class="promo-card"><div class="icon">💰</div><h3>DP Hanya 10%</h3><p>Mulai dari Rp 50 jutaan, langsung bisa proses KPR hari ini.</p></div>
+          <div class="promo-card"><div class="icon">📝</div><h3>Free Notaris &amp; Akad</h3><p>Semua biaya legal kami tanggung. Zero biaya notaris untuk Anda.</p></div>
+          <div class="promo-card"><div class="icon">🏛️</div><h3>Free BPHTB &amp; PPN</h3><p>Pajak pembelian dan bea balik nama? Semua beres dari developer.</p></div>
+          <div class="promo-card"><div class="icon">🛋️</div><h3>Bonus AC + Kulkas + Kanopi</h3><p>Rumah siap huni lengkap dengan perabot eksklusif tanpa biaya tambahan.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ URGENCY ═══ -->
+<section id="urgency">
+  <div class="wrap">
+    <div class="urg-inner">
+      <div class="urg-left r-l">
+        <div class="urg-icon">🚨</div>
+        <div class="urg-text">
+          <h3>Unit Hampir Habis — Jangan Tunda!</h3>
+          <p>Harga bisa naik kapan saja tanpa pemberitahuan. Ratusan calon pembeli sedang mempertimbangkan unit ini.</p>
+        </div>
+      </div>
+      <div class="urg-right r-r" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <div class="urg-badge"><div class="nb">50+</div><div class="lb">Unit Terjual</div></div>
+        <div class="urg-badge"><div class="nb">Terbatas</div><div class="lb">Sisa Unit</div></div>
+        <a href="https://wa.me/6285753858493?text=Halo,%20saya%20ingin%20cek%20ketersediaan%20unit%20Samarinda%20Hills%20sekarang.%20Masih%20ada?" target="_blank" class="btn btn-gold" style="white-space:nowrap">⚡ Cek Sekarang</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LOKASI ═══ -->
+<section id="lokasi">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="chip chip-green">📍 Lokasi</div>
+      <h2>Lokasi Strategis di Samarinda Seberang</h2>
+      <p>JL. Sejahtera / KH Harun Nafsi, Rapak Dalam, Kec. Loa Janan Ilir, Samarinda Seberang 75251</p>
+    </div>
+    <div class="lokasi-grid">
+      <div class="lokasi-img-stack r-l">
+        <img class="lok-img-main"
+          src="https://cdn.scalev.id/uploads/1778207489/gZJbc_6XP4slzVrXHvd-DA/1778207489454-IMG_20260407_131714_989.webp"
+          alt="Marketing Gallery Samarinda Hills">
+        <div class="lok-img-pin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ruko A1-A2, Samarinda Hills
+        </div>
+      </div>
+      <div class="r-r">
+        <div class="lokasi-items">
+          <div class="lok-item"><div class="lok-icon">🏫</div><div><h4>Sekolah (SD/SMP/SMA)</h4><p>Beberapa sekolah favorit Samarinda Seberang</p></div><div class="lok-dist">Dekat</div></div>
+          <div class="lok-item"><div class="lok-icon">🏥</div><div><h4>Rumah Sakit / Puskesmas</h4><p>Akses layanan kesehatan yang mudah</p></div><div class="lok-dist">Dekat</div></div>
+          <div class="lok-item"><div class="lok-icon">🛒</div><div><h4>Pasar &amp; Minimarket</h4><p>Kebutuhan harian terpenuhi setiap saat</p></div><div class="lok-dist">Dekat</div></div>
+          <div class="lok-item"><div class="lok-icon">🌉</div><div><h4>Jembatan Mahakam</h4><p>Akses ke pusat kota Samarinda</p></div><div class="lok-dist">Via JL. Apt Pranoto</div></div>
+          <div class="lok-item"><div class="lok-icon">🛣️</div><div><h4>JL. KH Harun Nafsi</h4><p>Jalan utama akses masuk perumahan</p></div><div class="lok-dist">Di Depan</div></div>
+        </div>
+        <div class="direction-box" style="margin-top:16px">
+          <h4>🗺️ Cara Menuju Samarinda Hills</h4>
+          <p>Dari Jembatan Mahakam → Lurus di JL. Apt Pranoto → Di pertigaan, belok kanan ke JL. KH Harun Nafsi → Entry Gate Samarinda Hills berada di sebelah kiri, tidak jauh dari pertigaan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center r">
+      <div class="chip chip-green">FAQ</div>
+      <h2>Pertanyaan yang Sering Ditanyakan</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          🤔 Lokasi tepatnya di mana?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="faq-a"><p>Dari Jembatan Mahakam, lurus terus di JL. Apt Pranoto hingga bertemu pertigaan, belok ke kanan di JL. KH Harun Nafsi. Tidak jauh dari pertigaan, Entry Gate Samarinda Hills berada di sebelah kiri.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          🤔 Setelah DP bisa langsung terima kunci?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="faq-a"><p>Benar. Setelah kesiapan berkas selesai, Anda melakukan DP 10%. Biaya lainnya (BPHTB, SHM, PPN, dan Akad) ditanggung developer. Setelah akad selesai, Anda bisa langsung menempati unit.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          🤔 Apakah ada KPR untuk semua bank?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="faq-a"><p>Tim kami bekerja sama dengan berbagai bank terpercaya. Kami juga membantu pengecekan kelayakan KPR Anda secara gratis. Konsultasikan kebutuhan Anda via WhatsApp, kami siap bantu.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          🤔 Apa saja yang sudah termasuk dalam harga?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="faq-a"><p>Sudah termasuk: SHM, IMB, BPHTB, PPN, biaya akad notaris, dan bonus AC, kulkas, serta kanopi. Anda cukup siapkan DP dan biaya KPR (provisi sudah free). Tidak ada biaya tersembunyi.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          🤔 Kapan bisa survei lokasi?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="faq-a"><p>Anda bisa survei kapan saja pada hari dan jam kerja kami. Atau chat dulu via WhatsApp untuk jadwal kunjungan yang tepat. Marketing Gallery kami ada di Ruko A1-A2 Samarinda Hills.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT / FOOTER CTA ═══ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="contact-left r-l">
+        <div class="chip chip-white" style="margin-bottom:16px">Hubungi Kami</div>
+        <h2 style="color:#fff">Siap Bantu Anda<br>Temukan Rumah Impian</h2>
+        <p>Tim profesional kami siap membantu mulai dari simulasi KPR, survei lokasi, hingga akad kredit. Semua gratis, tanpa paksaan.</p>
+        <div class="contact-info" style="margin-top:30px">
+          <div class="ci-row"><div class="ci-icon">📞</div><div><h4>WhatsApp</h4><p>085753858493</p></div></div>
+          <div class="ci-row"><div class="ci-icon">📞</div><div><h4>Telepon</h4><p>0821-5577-5771</p></div></div>
+          <div class="ci-row"><div class="ci-icon">📍</div><div><h4>Marketing Gallery</h4><p>Ruko A1-A2, Jl. Sejahtera Rt.26, Kel. Rapak Dalam, Kec. Loa Janan Ilir, Samarinda Seberang 75251</p></div></div>
+          <div class="ci-row"><div class="ci-icon">🌐</div><div><h4>Website</h4><p><a href="https://www.thesamarindahills.com" target="_blank" style="color:var(--gold-lite)">www.thesamarindahills.com</a></p></div></div>
+          <div class="ci-row"><div class="ci-icon">🏛️</div><div><h4>Asosiasi</h4><p style="color:rgba(255,255,255,.7)">Member of REI Association</p></div></div>
+        </div>
+      </div>
+      <div class="contact-right r-r">
+        <div class="cta-main-card">
+          <div class="headline">Jangan Tunggu<br>Unit Habis! 🏡</div>
+          <p>Harga bisa naik kapan saja. Chat sekarang dan dapatkan simulasi KPR gratis dalam hitungan menit.</p>
+          <a href="https://wa.me/6285753858493?text=Halo,%20saya%20ingin%20konsultasi%20dan%20booking%20unit%20Samarinda%20Hills.%20Bisa%20dibantu?" target="_blank" class="btn btn-wa btn-wa-lg" style="width:100%;justify-content:center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            💬 Chat WhatsApp 085753858493
+          </a>
+          <div class="trust-row">
+            <div class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Respon Cepat</div>
+            <div class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Gratis Konsultasi</div>
+            <div class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Tanpa Paksaan</div>
+          </div>
+        </div>
+        <img src="https://cdn.scalev.id/uploads/1778206230/mIuAT9doFISO555XrON3hg/1778206230198-Desain-tanpa-judul-(18).webp"
+             alt="Promo Samarinda Hills"
+             style="width:100%;border-radius:var(--r-md);box-shadow:var(--shadow)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <img src="https://cdn.scalev.id/uploads/1778207605/iKxuNxP3K61HZDE9o2hoeg/1778207606067-logo-Samarinda-Hill.webp" alt="Logo" class="footer-logo">
+  <p>© 2025 Samarinda Hills – Perumahan Komersil Samarinda Seberang &nbsp;|&nbsp;
+     <a href="https://wa.me/6285753858493" target="_blank">WA: 085753858493</a> &nbsp;|&nbsp;
+     <a href="https://www.thesamarindahills.com" target="_blank">thesamarindahills.com</a>
+  </p>
+  <p style="margin-top:6px">Member of REI Association</p>
+</footer>
+
+<!-- ═══ STICKY WA ═══ -->
+<div id="sticky">
+  <div class="wa-ping"></div>
+  <a href="https://wa.me/6285753858493?text=Halo,%20saya%20tertarik%20dengan%20Samarinda%20Hills.%20Bisa%20info?" target="_blank" aria-label="Chat WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-label">Chat WA</span>
+  </a>
+</div>
+
+<script>
+/* ═══ TOPBAR ═══ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('topbar').className=window.scrollY>60?'solid':'clear';
+});
+
+/* ═══ HERO BG ZOOM ═══ */
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('heroBg')?.classList.add('loaded'),100);
+});
+
+/* ═══ SLIDER ═══ */
+const sliderState={};
+function initSlider(id){
+  const slides=document.getElementById(id);
+  if(!slides)return;
+  const count=slides.children.length;
+  sliderState[id]={current:0,count};
+  const dotsEl=document.getElementById(id.replace('slides','dots'));
+  if(dotsEl){
+    dotsEl.innerHTML='';
+    for(let i=0;i<count;i++){
+      const d=document.createElement('button');
+      d.className='slide-dot'+(i===0?' active':'');
+      d.onclick=(e)=>{e.stopPropagation();goSlide(id,i)};
+      dotsEl.appendChild(d);
+    }
+  }
+  // touch
+  let sx=0;
+  slides.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  slides.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>40)slide(id,id.replace('slides','dots'),dx<0?1:-1);
+  },{passive:true});
+}
+function slide(slidesId,dotsId,dir){
+  const s=sliderState[slidesId];
+  if(!s)return;
+  s.current=(s.current+dir+s.count)%s.count;
+  document.getElementById(slidesId).style.transform=`translateX(-${s.current*100}%)`;
+  const dots=document.getElementById(dotsId);
+  if(dots){[...dots.children].forEach((d,i)=>d.className='slide-dot'+(i===s.current?' active':''))}
+}
+function goSlide(slidesId,idx){
+  const s=sliderState[slidesId];
+  if(!s)return;
+  s.current=idx;
+  document.getElementById(slidesId).style.transform=`translateX(-${idx*100}%)`;
+  const dotsId=slidesId.replace('slides','dots');
+  const dots=document.getElementById(dotsId);
+  if(dots){[...dots.children].forEach((d,i)=>d.className='slide-dot'+(i===idx?' active':''))}
+}
+['slides-0','slides-1','slides-2'].forEach(initSlider);
+
+/* ═══ TABS ═══ */
+function switchTab(idx,btn){
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.produk-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-'+idx).classList.add('active');
+}
+
+/* ═══ FAQ ═══ */
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+/* ═══ SCROLL REVEAL ═══ */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.r,.r-l,.r-r').forEach(el=>ro.observe(el));
+
+/* ═══ STAGGER ═══ */
+document.querySelectorAll('.k-card,.fas-card,.promo-card').forEach((el,i)=>{
+  el.style.transitionDelay=(i*.08)+'s';
+});
+</script>
+</body>
+</html>
